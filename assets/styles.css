@@ -1,0 +1,389 @@
+
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Asap+Condensed:wght@400;500;700&display=swap');
+
+/* Variables */
+:root {
+  --color-black: #333333;
+  --color-white: #FFF8F8;
+  --font-primary: 'Instrument Serif', serif;
+  --font-secondary: 'Asap Condensed', Arial, sans-serif;
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Asap+Condensed:wght@400;500;700&display=swap');
+  --color-primary: #713D49;
+  --color-secondary: #fcaec4;
+  --font-size-display: 205.03px;
+  --font-size-h1: 100.98px;
+  --font-size-h2: 75.76px;
+  --font-size-h3: 56.83px;
+  --font-size-h4: 42.63px;
+  --font-size-h5: 31.98px;
+  --font-size-subtitle: 23.99px;
+  --font-size-paragraph: 18px;
+  --font-size-small: 13.5px;
+  --font-size-caption: 10.13px;
+}
+
+/* Typography utility classes */
+.fs-paragraph {
+    font-size: var(--font-size-paragraph);
+    letter-spacing: -1px;
+    word-spacing: 3px;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: var(--color-white);
+    color: #222;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 80px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem;
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none; /* prevent video from blocking interaction */
+}
+
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 4;
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hamburger span {
+  height: 4px;
+  background: var(--color-white);
+  margin: 3px 0;
+  border-radius: 2px;
+  width: 100%;
+  transition: 0.3s ease;
+}
+
+#hamburger span:first-child {
+      display: block; /* Keep as block or inline-block */
+      width: 5px; /* Size of a single dot */
+      height: 5px; /* Size of a single dot */
+      background-color: var(--color-white);
+      border-radius: 50%; /* Make it a circle */
+      margin: 3px auto; /* Center the dots horizontally if parent is block, adjust if flex */
+      box-shadow: -12px 0 0 0 var(--color-white), /* Dot to the left */
+                  12px 0 0 0 var(--color-white);  /* Dot to the right */
+    }
+    
+
+/* Pop nav */
+.nav-popup {
+  position: absolute;
+  top: 3.8rem;
+  right: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.9);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 200;
+}
+
+.nav-popup.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.nav-popup button {
+  all: unset;
+  font-size: 1rem;
+  font-family: var(--font-primary, sans-serif);
+  padding: 0.5rem 1rem;
+  color: var(--color-white);
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.nav-popup button:hover {
+  background-color: var(--color-secondary);
+}
+
+.nav-popup.show button {
+  animation: bounceIn 0.4s forwards;
+}
+
+.nav-popup.show button:nth-child(2) {
+  animation-delay: 0.05s;
+}
+.nav-popup.show button:nth-child(3) {
+  animation-delay: 0.1s;
+}
+.nav-popup.show button:nth-child(4) {
+  animation-delay: 0.15s;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.popup-btn {
+  all: unset;
+  font-size: 1rem;
+  font-family: var(--font-primary, sans-serif);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Individual colors */
+.popup-btn.about {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.popup-btn.studio {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.popup-btn.works {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.popup-btn.inquire {
+  background-color: var(--color-primary)
+}
+
+/* Hover Effects */
+.popup-btn:hover {
+  transform: scale(1.05);
+}
+
+
+/* Close button */
+.close-nav {
+  position: fixed;
+  top: 0.7rem;
+  right: 1.2rem;
+  width: 32px;
+  height: 32px;
+  background: none !important;
+  border: none;
+  font-size: 0;
+  color: var(--color-black);
+  cursor: pointer;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-nav:hover svg line {
+  stroke: var(--color-secondary)
+}
+
+/* Animations */
+@keyframes popBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    min-height: 100svh;
+    padding: 6.5rem 1.2rem 2.5rem 1.2rem; /* ← padding-top makes space for navbar */
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+.hero-content {
+    max-width: 540px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.hero-title {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-h1);
+    font-weight: 500;
+    color: var(--color-white);
+    text-align: left;
+    letter-spacing: -10px;
+    word-spacing: 10px;
+}
+.hero-features {
+    font-family: var(--font-secondary);
+    font-size: calc(var(--font-size-paragraph)*1.25);
+    color: var(--color-white);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    text-transform: uppercase;
+}
+.hero-brand {
+    font-size: var(--font-size-paragraph);
+    color: var(--color-white);
+    font-family: var(--font-secondary);
+    text-align: left;
+    margin-bottom: 1.2rem;
+}
+.hero-cta {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 100;
+  padding: 0.7rem 2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  box-shadow: 0 4px 16px 0 rgba(113, 61, 73, 0.18), 0 1.5px 6px 0 rgba(51, 51, 51, 0.1);
+  transition: background 0.2s, color 0.2s, transform 0.08s cubic-bezier(.4, 0, .2, 1), box-shadow 0.18s cubic-bezier(.4, 0, .2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ========== Shimmer Effect ========== */
+.hero-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.7;
+  animation: hero-cta-shimmer 2.2s infinite;
+}
+
+@keyframes hero-cta-shimmer {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+
+/* ========== Text inside button ========== */
+.hero-cta .hero-cta__text {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+/* ========== Hover and Focus ========== */
+.hero-cta:hover {
+  background: var(--color-white);
+  color: var(--color-primary);
+  transform: scale(0.97);
+}
+
+.hero-cta:focus {
+  outline-offset: 2px;
+}
+
+/* ========== Loading State ========== */
+.hero-cta.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.hero-cta.loading .hero-cta__text {
+  opacity: 0;
+}
+
+/* Centered spinner */
+.hero-cta.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.1em;
+  height: 1.1em;
+  border: 2px solid var(--color-primary);
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: hero-cta-spin 0.7s linear infinite;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* Spinner animation */
+@keyframes hero-cta-spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
