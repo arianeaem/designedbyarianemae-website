@@ -14,16 +14,30 @@
 <body>
   <nav class="navbar">
     <div class="logo">
-      <img src="assets/ariane-mae-icon.svg" alt="Ariane Mae Logo" style="height: 2.2rem; width: auto; display: block;" />
+      <a href="home.html">
+        <img src="assets/ariane-mae-icon.svg" alt="Ariane Mae Logo" style="height: 2.2rem; width: auto; display: block;" />
+      </a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
     </button>
     <div class="nav-popup" id="navPopup">
-      <a href="about-inquiry.html" class="popup-btn about">About Me</a>
-      <button class="popup-btn studio">Studio</button>
-      <button class="popup-btn works">Works</button>
-      <button class="popup-btn inquire">Inquire</button>
+      <a href="about-inquiry.html" class="popup-btn about">
+        <span>About Me</span>
+        <img src="assets/ariane-mae-icon.svg" alt="Logo" />
+      </a>
+      <a href="#studio" class="popup-btn studio">
+        <span>Studio</span>
+        <img src="assets/ariane-mae-icon.svg" alt="Logo" />
+      </a>
+      <a href="#works" class="popup-btn works">
+        <span>Works</span>
+        <img src="assets/ariane-mae-icon.svg" alt="Logo" />
+      </a>
+      <a href="#inquire" class="popup-btn inquire">
+        <span>Inquire</span>
+        <img src="assets/ariane-mae-icon.svg" alt="Logo" />
+      </a>
     </div>
   </nav>
   <main class="about-inquiry-main">
@@ -68,39 +82,39 @@
 
         <fieldset class="form-group" style="border:none;">
           <legend>Project Needs</legend>
-          <label for="websiteNeeds">Your website needs...</label>
+          <label for="websiteNeeds">Your website needs... <span style="color:#FF6F61; font-size:2em; vertical-align:middle;">*</span></label>
           <div class="form-checkboxes">
-            <label style="display:block;"><input type="checkbox" name="websiteNeeds" value="Pay-Once, Own Forever"> Pay-Once, Own Forever</label>
-            <label style="display:block;"><input type="checkbox" name="websiteNeeds" value="Worry-Free Monthly"> Worry-Free Monthly</label>
-            <label style="display:block;"><input type="checkbox" name="websiteNeeds" value="Custom Website"> Custom Website</label>
+            <label style="display:block;"><input type="radio" name="websiteNeeds" value="Pay-Once, Own Forever" required> Pay-Once, Own Forever</label>
+            <label style="display:block;"><input type="radio" name="websiteNeeds" value="Worry-Free Monthly" required> Worry-Free Monthly</label>
+            <label style="display:block;"><input type="radio" name="websiteNeeds" value="Custom Website" required> Custom Website</label>
           </div>
-<label for="yourWebsite">Your Website / Socials: <span style="color:#FF6F61; font-size:2em; vertical-align:middle;">*</span></label>
-          <input type="text" id="yourWebsite" name="yourWebsite">
+          <label for="yourWebsite">Your Website / Socials: <span style="color:#FF6F61; font-size:2em; vertical-align:middle;">*</span></label>
+          <input type="text" id="yourWebsite" name="yourWebsite" required>
         </fieldset>
 
         <fieldset class="form-group" style="border:none;">
           <legend>Business Details</legend>
-<label for="projectExplanation">A brief explanation of your business / project <span style="color:#FF6F61; font-size:2em; vertical-align:middle;">*</span></label>
-          <textarea id="projectExplanation" name="projectExplanation" rows="4" placeholder="Tell me about your project, your dream client, or why you’re ready to upgrade ✨"></textarea>
-<label for="pinterest">Link to Pinterest board: <span style="color:#FF6F61; font-size:2em; vertical-align:middle;">*</span></label>
-          <input type="url" id="pinterest" name="pinterest" placeholder="Paste any Pinterest board or moodboard here (optional)">
+          <label for="projectExplanation">A brief explanation of your business / project <span style="color:#FF6F61; font-size:2em; vertical-align:middle;">*</span></label>
+          <textarea id="projectExplanation" name="projectExplanation" rows="4" placeholder="Tell me about your project, your dream client, or why you’re ready to upgrade." required></textarea>
+          <label for="pinterest">Link to Pinterest board: <span style="color:#FF6F61; font-size:2em; vertical-align:middle;">*</span></label>
+          <input type="url" id="pinterest" name="pinterest" placeholder="Paste any Pinterest board or moodboard here (optional)" required>
         </fieldset>
 
         <fieldset class="form-group" style="border:none;">
           <legend>Timeline + Budget</legend>
-          <label for="investment">How much are you willing to invest?</label>
+          <label for="investment">How much are you willing to invest? <span style="color:#FF6F61; font-size:2em; vertical-align:middle;">*</span></label>
           <small style="display:block; color:#888; margin-bottom:0.5rem;">No pressure — just a starting point to understand what you need.</small>
           <div class="form-checkboxes">
-            <label style="display:block;"><input type="radio" name="investment" value="Under $1,000"> Under $1,000</label>
-            <label style="display:block;"><input type="radio" name="investment" value="$1,000 - $2,500"> $1,000 - $2,500</label>
-            <label style="display:block;"><input type="radio" name="investment" value="$2,500 - $5,000"> $2,500 - $5,000</label>
-            <label style="display:block;"><input type="radio" name="investment" value="$5,000+"> $5,000+</label>
+            <label style="display:block;"><input type="radio" name="investment" value="Under $1,000" required> Under $1,000</label>
+            <label style="display:block;"><input type="radio" name="investment" value="$1,000 - $2,500" required> $1,000 - $2,500</label>
+            <label style="display:block;"><input type="radio" name="investment" value="$2,500 - $5,000" required> $2,500 - $5,000</label>
+            <label style="display:block;"><input type="radio" name="investment" value="$5,000+" required> $5,000+</label>
           </div>
 <label for="launchDate">When do you hope to launch? <span style="color:#FF6F61; font-size:2em; vertical-align:middle;">*</span></label>
           <div class="form-row">
-            <input type="date" id="launchDate" name="launchDate" style="margin-right:1rem;">
+            <input type="date" id="launchDate" name="launchDate" style="margin-right:1rem;" required>
             <div class="form-checkboxes inline">
-              <label for="flexibleLaunch"><input type="checkbox" id="flexibleLaunch" name="flexibleLaunch"> I’m flexible / Still figuring it out</label>
+              <label for="flexibleLaunch"><input type="checkbox" id="flexibleLaunch" name="flexibleLaunch" required> I’m flexible / Still figuring it out</label>
             </div>
           </div>
         </fieldset>
