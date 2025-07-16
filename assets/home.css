@@ -316,8 +316,8 @@ body {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background: var(--color-secondary);
-  color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-secondary);
   font-family: var(--font-primary);
   text-transform: uppercase;
   font-size: 1.1rem;
