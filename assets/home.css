@@ -1,14 +1,14 @@
 
 
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Barlow+Semi+Condensed:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Barlow:wght@400;500;700&display=swap');
 
 /* Variables */
 :root {
   --color-black: #333333;
   --color-white: #FFF8F8;
   --font-primary: 'Instrument Serif', serif;
-  --font-secondary: 'Barlow Semi Condensed', Arial Narrow, Arial, sans-serif;
+  --font-secondary: 'Barlow', Arial Narrow, Arial, sans-serif;
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Asap+Condensed:wght@400;500;700&display=swap');
   --color-primary: #713D49;
@@ -323,7 +323,7 @@ body {
 }
 .hero-features {
     font-family: var(--font-secondary);
-    font-size: calc(var(--font-size-paragraph)*1.75);
+    font-size: calc(var(--font-size-paragraph)*1.5);
     color: var(--color-white);
     font-weight: 400;
     margin-bottom: 0.5rem;
@@ -333,7 +333,7 @@ body {
     font-weight: 500;
 }
 .hero-brand {
-    font-size: calc(var(--font-size-paragraph) * 1.5);
+    font-size: var(--font-size-paragraph);
     color: var(--color-white);
     font-family: var(--font-secondary);
     text-align: left;
