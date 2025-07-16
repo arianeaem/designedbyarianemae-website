@@ -48,13 +48,13 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: auto;
-  padding: 0;
+  height: 80px; /* or your preferred height */
   background: transparent;
   z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
+  pointer-events: auto; /* keep interactive */
 }
 
 .background-video {
@@ -275,7 +275,7 @@ body {
 .hero {
     width: 100%;
     min-height: 100vh;
-    padding-top: 0;
+    padding-top: 80px;
     padding-bottom: 20px;
     padding-right: 10px;
     padding-left: 10px;
