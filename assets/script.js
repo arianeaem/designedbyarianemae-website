@@ -17,24 +17,16 @@ if (heroCTA) {
   const ctaText = heroCTA.querySelector('.hero-cta__text');
 
   heroCTA.addEventListener('click', function (e) {
-    e.preventDefault();
+    e.preventDefault(); // Prevent default to delay the navigation for 2 sec
 
     if (this.classList.contains('loading')) return;
 
     this.classList.add('loading');
     if (ctaText) ctaText.style.opacity = '0';
 
-    // Simulate a 2-second "loading"
+    // Simulate a 2-second loading animation, then navigate
     setTimeout(() => {
-      this.classList.remove('loading');
-      if (ctaText) ctaText.style.opacity = '1';
-
-      // Scroll to section
-      const target = document.querySelector('#works');
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
+      window.location.href = this.href; // ✅ Navigate to the link after delay
     }, 2000);
   });
 }
-
