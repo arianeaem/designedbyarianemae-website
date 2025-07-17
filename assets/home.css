@@ -1,3 +1,7 @@
+/* Make nav icon images (alt=Logo) #333333 */
+.nav-popup img[alt="Logo"] {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(80%) contrast(100%);
+}
 
 
 /* Import Google Fonts */
@@ -196,10 +200,10 @@ body {
 .popup-btn {
   all: unset;
   font-size: 1rem;
-  font-family: var(--font-primary, sans-serif);
+  font-family: var(--font-secondary);
   padding: 0.6rem 1rem;
   border-radius: 6px;
-  font-weight: 400;
+  font-weight: 500;
   color: white;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -208,7 +212,8 @@ body {
   flex-direction: row;
   align-items: center;
   max-width: 100%;
-  gap: 10px ;
+  gap: 20px ;
+  letter-spacing: -1px;
 }
 
 /* Ensure span and img inside popup-btn are both at the end */
@@ -233,17 +238,17 @@ body {
 }
 /* Individual colors */
 .popup-btn.about {
-  background-color: #f9e9ec;
+  background-color: rgba(245, 200, 214, 0.95);
   color: var(--color-black);
 }
 
 .popup-btn.studio {
-  background-color: #f9e9ec ;
+  background-color: rgba(245, 200, 214, 0.95);
   color: var(--color-black);
 }
 
 .popup-btn.works {
-  background-color: #f9e9ec ;
+  background-color: rgba(245, 200, 214, 0.95);
   color: var(--color-black);
 }
 
