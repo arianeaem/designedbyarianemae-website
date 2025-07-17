@@ -1,136 +1,15 @@
-/* --- Navbar Styles from home.css --- */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 80px;
-  z-index: 100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.2rem;
-}
-.logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.6rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-.hamburger {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 4;
-  position: absolute;
-  right: 1.2rem;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.hamburger span {
-  height: 4px;
-  background: var(--color-white);
-  margin: 3px 0;
-  border-radius: 2px;
-  width: 100%;
-  transition: 0.3s ease;
-}
-#hamburger span:first-child {
-  display: block;
-  width: 5px;
-  height: 5px;
-  background-color: var(--color-white);
-  border-radius: 50%;
-  margin: 3px auto;
-  box-shadow: -12px 0 0 0 var(--color-white), 12px 0 0 0 var(--color-white);
-}
-.nav-popup {
-  position: absolute;
-  top: 3.8rem;
-  right: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.9);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  z-index: 200;
-}
-.nav-popup.show {
-  opacity: 1;
-  pointer-events: auto;
-  transform: scale(1);
-}
-.popup-btn {
-  all: unset;
-  font-size: 1rem;
-  font-family: var(--font-primary, sans-serif);
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  font-weight: 500;
-  color: white;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  max-width: 100%;
-  gap: 0;
-}
-.popup-btn span, .popup-btn img {
-  display: inline-block;
-}
-.popup-btn span {
-  flex: 1 1 auto;
-  text-align: left;
-}
-.popup-btn img {
-  flex: 0 0 auto;
-  height: 1.5em;
-  width: auto;
-  margin-left: 0.5em;
-}
-.popup-btn.about {
-  background-color: var(--color-secondary);
-  color: var(--color-black);
-}
-.popup-btn.studio {
-  background-color: var(--color-white);
-  color: var(--color-black);
-}
-.popup-btn.works {
-  background-color: var(--color-white);
-  color: var(--color-black);
-}
-.popup-btn.inquire {
-  background-color: var(--color-primary);
-}
-.popup-btn:hover {
-  transform: scale(1.05);
-}
+
 
 
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Asap+Condensed:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Noto+Sans+JP:wght@400;500;700&display=swap');
 
 /* Variables */
 :root {
   --color-black: #333333;
   --color-white: #FFF8F8;
   --font-primary: 'Instrument Serif', serif;
-  --font-secondary: 'Arial Narrow', Arial, sans-serif;
+  --font-secondary: 'Noto Sans JP', sans-serif;
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Asap+Condensed:wght@400;500;700&display=swap');
   --color-primary: #713D49;
@@ -146,9 +25,18 @@
   --font-size-small: 13.5px;
   --font-size-caption: 10.13px;
 }
-nav.navbar {
-  /* removed old navbar styles */
-/* --- Navbar Styles from home.css --- */
+
+/* About / Inquiry Page Styles */
+body {
+  background: var(--color-white, var(--color-secondary));
+  color: var(--color-black, var(--color-black));
+  font-family: var(--font-secondary, sans-serif);
+  letter-spacing: -1px;
+  word-spacing: 2px;
+  margin: 0;
+  padding: 0;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -160,7 +48,10 @@ nav.navbar {
   justify-content: center;
   align-items: center;
   padding: 1.2rem;
+  background: var(--color-primary, #713D49);
+  color: var(--color-white, #FFF8F8);
 }
+
 .logo {
   position: absolute;
   left: 50%;
@@ -185,6 +76,7 @@ nav.navbar {
   transform: translateY(-50%);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
 .hamburger span {
   height: 4px;
   background: var(--color-white);
@@ -269,38 +161,7 @@ nav.navbar {
 .popup-btn:hover {
   transform: scale(1.05);
 }
-}
-/* About / Inquiry Page Styles */
-body {
-  background: var(--color-white, var(--color-secondary));
-  color: var(--color-black, var(--color-black));
-  font-family: var(--font-secondary, sans-serif);
-  letter-spacing: -1px;
-  word-spacing: 2px;
-  margin: 0;
-  padding: 0;
-}
 
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 80px;
-  z-index: 100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.2rem;
-  background: var(--color-primary, #713D49);
-  color: var(--color-white, #FFF8F8);
-}
-
-.logo {
-  font-size: 1.6rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
 
 .about-inquiry-main {
   margin-top: 100px;
@@ -316,11 +177,12 @@ body {
   margin-bottom: 2.5rem;
 }
 
-.about-section h1 {
+.about-section h2 {
   font-family: var(--font-primary, 'Instrument Serif', serif);
   font-size: 2.5rem;
   color: var(--color-primary, #713D49);
   margin-bottom: 1rem;
+  line-height: 40px;
 }
 
 .about-section p {
@@ -374,10 +236,12 @@ fieldset.form-group legend {
 }
 
 .inquiry-form label {
-  font-size: 1rem;
+  font-size: var(--font-size-paragraph);
   color: var(--color-black, #333);
   text-align: left;
   margin: 0;
+  font-weight: 500;
+  line-height: 30px;
 }
 
 .inquiry-form input,
@@ -387,19 +251,19 @@ fieldset.form-group legend {
   margin: 0;
   border-radius: 6px;
   font-size: 1rem;
-  font-family: var(--font-secondary, Arial, sans-serif);
-  background: #f9e9ec;
+  font-family: var(--font-secondary, sans-serif);
+  background: #f8f1f3;
   resize: vertical;
 }
 
 label[for="websiteNeeds"] {
-  padding: 9px 0;
+  padding: 3px 0;
   display: flex;
   align-items: center;
 }
 
 label[for="investment"] {
-  padding: 9px 0;
+  padding: 3px 0;
   display: block;
 }
 
@@ -520,8 +384,6 @@ label[for="flexibleLaunch"] {
   vertical-align: middle;
 }
 
-
-
 /* Responsive CTA button for inquiry form */
 .inquiry-form .hero-cta,
 .inquiry-form button.hero-cta,
@@ -538,7 +400,6 @@ label[for="flexibleLaunch"] {
 .inquiry-form .hero-cta__text {
   margin: 0 auto;
   text-align: center;
-  display: inline-block;
 }
 
 #inquiryCTA {
