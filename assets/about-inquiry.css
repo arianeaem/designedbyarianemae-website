@@ -1,4 +1,5 @@
 
+
 /* Ensure anchor navigation is visible below fixed navbar */
 #inquiry-section {
   scroll-margin-top: 100px; /* Adjust if your navbar is taller/shorter */
@@ -175,6 +176,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 2rem 1.2rem;
+  background: #fff;
 }
 
 .about-section {
@@ -189,18 +191,69 @@ body {
   color: var(--color-primary, #713D49);
   margin-bottom: 1rem;
   line-height: 40px;
-  font-weight: lighter;
+  font-weight: 700;
 }
+
+/* About section images with 4/5 aspect ratio */
+.about-images {
+  position: relative;
+  width: 200px;
+  min-height: 260px;
+  margin: 2rem auto 1.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.about-images img {
+  aspect-ratio: 4 / 5;
+  width: 180px;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  border: 5px solid var(--color-primary);
+  cursor: pointer;
+  transition: border 0.2s, transform 0.5s cubic-bezier(.4,2,.6,1), z-index 0.5s;
+}
+.about-images img:nth-child(1) {
+  z-index: 1;
+  transform: rotate(-4deg) translateY(18px) scale(0.97);
+}
+.about-images img.active,
+.about-images img.front {
+  z-index: 2 !important;
+  /* Center the front image more naturally */
+  transform: rotate(-1deg) translateY(-6px) scale(1.06) !important;
+}
+.about-images img.back {
+  z-index: 1 !important;
+  transform: rotate(-4deg) translateY(18px) scale(0.97) !important;
+}
+
+.about-images img:nth-child(2) {
+  z-index: 2;
+  transform: rotate(2deg) translateY(-18px) scale(1.03);
+}
+
 
 .about-section h3 {
     font-weight: 500;
+    color: var(--color-black);
     font-size: var(--font-size-h3);
     letter-spacing: -6px;
 }
 
 .about-section p {
-  font-size: 1.2rem;
-  color: var(--color-black, #333);
+  font-size: calc(var(--font-size-paragraph)*1.5);
+  color: var(--color-black, --color-black);
+  padding: 10px 0;
+  letter-spacing: -2.8px;
 }
 /* Flex alignment for h3 and parentheses */
 .nickname-flex {
@@ -230,9 +283,7 @@ body {
 .inquiry-section {
   max-width: 500px;
   width: 100%;
-  background: #fff;
   border-radius: 12px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   padding: 2rem 1.5rem;
   text-align: center;
 }
@@ -241,8 +292,8 @@ body {
   font-family: var(--font-primary, 'Instrument Serif', serif);
   font-size: var(--font-size-h5);
   color: var(--color-primary, #713D49);
-  font-weight: 100;
-  letter-spacing: -3px;
+  font-weight: 600;
+  letter-spacing: -2px;
   word-spacing: 3px;
   margin-bottom: 1.2rem;
 }
@@ -253,7 +304,7 @@ fieldset.form-group legend {
   color: var(--color-primary, #713D49);
   font-weight: 600;
   letter-spacing: -1px;
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 .inquiry-section > p {
@@ -347,6 +398,7 @@ fieldset.form-group {
       margin-right: auto;
       display: block;
     }
+    
     .inquiry-section {
       padding-left: 2rem;
       padding-right: 2rem;
@@ -395,6 +447,8 @@ fieldset.form-group {
   width: 100%;
   
 }
+
+
 .form-checkboxes label {
   display: flex;
   align-items: center;

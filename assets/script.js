@@ -1,3 +1,21 @@
+// Swap stacked about images on click
+document.addEventListener('DOMContentLoaded', function () {
+  const aboutImages = document.querySelector('.about-images');
+  if (!aboutImages) return;
+  const imgs = aboutImages.querySelectorAll('img');
+  if (imgs.length !== 2) return;
+
+  // Initial state: 2nd image is front
+  imgs[0].classList.add('back');
+  imgs[1].classList.add('front');
+
+  aboutImages.addEventListener('click', function () {
+    imgs[0].classList.toggle('front');
+    imgs[0].classList.toggle('back');
+    imgs[1].classList.toggle('front');
+    imgs[1].classList.toggle('back');
+  });
+});
 const hamburger = document.getElementById('hamburger');
 const navPopup = document.getElementById('navPopup');
 
